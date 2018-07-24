@@ -50,9 +50,12 @@ public:
 	void assign(char * start_pos, char * end_pos);
 	//assign-initializerlist - todo
 
-	//-----------compare------------------//
+	//-----------compare------------------// to do?!
 	int compare(se & se_object);
 	int compare(size_t pos, size_t len, se & se_object);
+
+	//-----------insert------------------// 
+	void insert(size_t insert_pos, size_t &se_object);
 
 };
 
