@@ -16,7 +16,7 @@ public:
 	void showarr(char *);
 
 	//-----------operators------------------//
-	se operator= (char * chararr);
+	void operator= (char * chararr);
 	void operator= (se * se_object);
 	void operator+=(se & se_object);
 	void operator+=(char * chararr);

@@ -35,7 +35,7 @@ se::se(char * chararr)
 	
 	}
 
-se se::operator=(char * chararr)
+void se::operator=(char * chararr)
 {
 	if (arrsize != 0)
 	{
