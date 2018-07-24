@@ -33,10 +33,22 @@ se::se(char * chararr)
 {
 	operator=(chararr);
 	
-	}
+}
+
+se::se(size_t malloc_size)
+{
+	malloc(malloc_size);
+}
 
 void se::operator=(char * chararr)
 {
+	/*
+	se temp_object;
+	temp_object.arrsize = length(chararr);
+	temp_object.malloc(temp_object.arrsize);
+	memcpy(temp_object.strarr, chararr, temp_object.arrsize);
+	*/
+	
 	if (arrsize != 0)
 	{
 	delete[]strarr;
@@ -45,9 +57,9 @@ void se::operator=(char * chararr)
 	arrsize = length(chararr);
 	//std::cout << "\n se::se(char chararr[]) arrsize: " << arrsize;
 	malloc(arrsize);
-	
 	mcopy(strarr, chararr);
-
+	
+	//return temp_object;
 }
 
 void se::operator=(se * se_object)
@@ -73,10 +85,22 @@ char & se::operator[](size_t pos)
 se se::operator+(se & se_object)
 {
 	size_t temp_object_arr_size = arrsize+se_object.arrsize;
-	se temp_object;
-	temp_object.malloc(temp_object_arr_size);
+	se temp_object(temp_object_arr_size);
+	//temp_object.malloc(temp_object_arr_size);
 	memcpy(temp_object.strarr, strarr, arrsize);
 	memcpy(temp_object.strarr + arrsize, se_object.strarr, se_object.arrsize);
+	return temp_object;
+}
+
+se se::operator+(char * chararr)
+{
+	size_t temp_object_arr_size = arrsize + length(chararr);
+	se temp_object(temp_object_arr_size);
+	//se temp_object;
+	//temp_object.malloc(temp_object_arr_size);
+	memcpy(temp_object.strarr, strarr, arrsize);
+	memcpy(temp_object.strarr + arrsize, chararr, length(chararr));
+	
 	return temp_object;
 }
 

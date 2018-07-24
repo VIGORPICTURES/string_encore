@@ -7,6 +7,7 @@ public:
 	size_t arrsize;
 	se();
 	se(char * chararr);
+	se(size_t malloc_size);
 	~se();
 
 	size_t length(char * chararr);
@@ -22,6 +23,7 @@ public:
 	void operator+=(char * chararr);
 	char & operator[](size_t pos);
 	se operator+(se & se_object);
+	se operator+(char * chararr);
 	
 
 	//-----------append------------------//
