@@ -85,8 +85,8 @@ char & se::operator[](size_t pos)
 se se::operator+(se & se_object)
 {
 	size_t temp_object_arr_size = arrsize+se_object.arrsize;
-	se temp_object;
-	temp_object.malloc(temp_object_arr_size);
+	se temp_object(temp_object_arr_size);
+	//temp_object.malloc(temp_object_arr_size);
 	memcpy(temp_object.strarr, strarr, arrsize);
 	memcpy(temp_object.strarr + arrsize, se_object.strarr, se_object.arrsize);
 	return temp_object;
@@ -95,14 +95,12 @@ se se::operator+(se & se_object)
 se se::operator+(char * chararr)
 {
 	size_t temp_object_arr_size = arrsize + length(chararr);
-	//se temp_object(length(chararr));
-	se temp_object;
-	temp_object.malloc(temp_object_arr_size);
+	se temp_object(temp_object_arr_size);
+	//se temp_object;
+	//temp_object.malloc(temp_object_arr_size);
 	memcpy(temp_object.strarr, strarr, arrsize);
 	memcpy(temp_object.strarr + arrsize, chararr, length(chararr));
-	//temp_object.malloc
-
-
+	
 	return temp_object;
 }
 
