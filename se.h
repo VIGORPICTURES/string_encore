@@ -22,6 +22,7 @@ public:
 	void operator+=(char * chararr);
 	char & operator[](size_t pos);
 	se operator+(se & se_object);
+	//test branch
 
 	//-----------append------------------//
 	void append(se & se_object);
