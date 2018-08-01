@@ -301,6 +301,23 @@ int se::compare(size_t pos, size_t len, se & se_object)
 	return 0;
 }
 
+void se::insert(size_t insert_pos, se &se_object)
+{
+	size_t temp_size = arrsize + se_object.arrsize;
+	se temp_object(temp_size);
+	memcpy(temp_object.strarr, strarr, insert_pos);
+	memcpy(temp_object.strarr + insert_pos, se_object.strarr, se_object.arrsize);
+	memcpy(temp_object.strarr + (insert_pos + se_object.arrsize), strarr + insert_pos, arrsize - insert_pos);
+	mfree();
+	malloc(temp_size);
+	memcpy(strarr, temp_object.strarr, temp_size);
+}
+
+void se::insert(size_t insert_pos, se &se_object, size_t object_start_pos, size_t object_count)
+{
+
+}
+
 void se::showarr(char * carr)
 {
 	std::cout << "\n /-------------------SHOW ARR-------------------/" << std::endl;

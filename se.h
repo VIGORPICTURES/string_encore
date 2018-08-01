@@ -55,7 +55,8 @@ public:
 	int compare(size_t pos, size_t len, se & se_object);
 
 	//-----------insert------------------// 
-	void insert(size_t insert_pos, size_t &se_object);
+	void insert(size_t insert_pos, se &se_object);
+	void insert(size_t insert_pos, se &se_object, size_t object_start_pos, size_t object_count);
 
 };
 
