@@ -56,7 +56,7 @@ public:
 
 	//-----------insert------------------// 
 	void insert(size_t insert_pos, se &se_object);
-	void insert(size_t insert_pos, se &se_object, size_t object_start_pos, size_t object_count);
+	void insert(size_t insert_pos, se &ob, size_t ob_start_pos, size_t ob_count);
 
 };
 

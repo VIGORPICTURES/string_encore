@@ -313,9 +313,13 @@ void se::insert(size_t insert_pos, se &se_object)
 	memcpy(strarr, temp_object.strarr, temp_size);
 }
 
-void se::insert(size_t insert_pos, se &se_object, size_t object_start_pos, size_t object_count)
+void se::insert(size_t insert_pos, se &ob, size_t ob_start_pos, size_t ob_count)
 {
-
+	size_t temp_size = arrsize + ob_count;
+	se t_ob(temp_size);
+	memcpy(t_ob.strarr, this->strarr, insert_pos);
+	memcpy(t_ob.strarr, ob.strarr + ob_start_pos, ob_count);
+	memcpy()
 }
 
 void se::showarr(char * carr)
